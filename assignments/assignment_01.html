@@ -7,18 +7,60 @@
     <link rel="stylesheet" type="text/css" href="../css/site-specific.css">
 
     <!-- Google fonts code -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
   </head>
   <body>
     <div class="title">
-      <h1>ASSIGNMENT 01 - Parallel Coordinates</h1>
+      <h5>ASSIGNMENT 01 - Parallel Coordinates</h5>
     </div>
     <div class="bio">
-      <h2>Description</h2>
-      <p class="bioText">This is the text for the chart, with multiple links... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent posuere ante quam, nec blandit ex tristique sed. Vivamus neque ex, imperdiet eget urna vel, volutpat consectetur leo. Nulla nunc sem, consectetur ac fermentum in, euismod vel tortor. Suspendisse congue purus quis nunc sodales laoreet. Nulla sed tristique tellus. Curabitur at sollicitudin mi, eu pellentesque arcu. In at orci libero. Quisque interdum, ipsum eget placerat eleifend, massa diam pellentesque orci, ac suscipit eros sem id erat. Nunc iaculis nibh id nulla sodales egestas. Duis ultrices aliquam neque ut luctus. Fusce condimentum dictum scelerisque. Cras eu fringilla ligula.<br><br>Proin interdum lorem tincidunt aliquet placerat. Maecenas aliquam venenatis erat. Integer tempus odio varius nunc egestas, id imperdiet lectus auctor. Morbi non varius mi, ut pulvinar odio. Nam nec dolor massa. Nunc a molestie ligula. Nullam imperdiet vestibulum felis in consequat. Aliquam felis turpis, bibendum vel mollis ut, bibendum ut libero. Maecenas ultricies molestie lectus, in congue nibh pellentesque sit amet. Mauris at diam feugiat, sodales purus id, mollis felis. Fusce sodales purus et dolor condimentum viverra. Curabitur fringilla leo consequat est sagittis, sit amet maximus nisi volutpat. Morbi quis nulla pharetra, volutpat turpis nec, scelerisque mauris. Quisque porta elit vel eros dictum condimentum. In imperdiet in velit id cursus. Sed pretium ultrices velit.</p>
-      <h2>Examples</h2>
-      <img class="bioImage" src="../img/jfs_image.jpeg">
-      <p class="bioText"><a href="../index.html">Take me back home...</a></p>
+      <h7>Intro</h7>
+        <p>Parallel Coordinates is a method of displaying multivariate data, useful especially when the data do not have an inherent order and can be rearranged to find patterns. This form is most appropriate for sets of data which have x- and y-values for every category to be displayed.</p>
+    <h7>How to Read & Build</h7>  
+        
+        <p>Parallel coordinate displays can be thought of as a series of superimposed line graphs that each track one element across multiple variables. Parallel coordinates feature an x-axis and a y-axis; <span class="italic">n</span> parallel lines (typically  vertical) each represent one category with a corresponding value along the y-axis.</p> 
+        
+        <p>Parallel coordinate charts allow one to visualize and analyze data points that share a set of variables. Trends and relationships among groups or around a certain category can become clearer when visualized with parallel coordinates. For example, in this flower petal visualization shown below:</p>
+        <img class="ExImage" src="../img/XLMinerDataVizParallelCoordinates.png">
+        <p>the verginica and versicolor species display a similar relationship between the four measurements; since the actual measurements are different, this similarity might not be as evident in list or spreadsheet form, but becomes immediately clear in a parallel coordinates system. The order of the x-axis categories is irrelevant. It doesn't matter whether petal width or petal length appears first, and that freedom allows the user to play around with the order and see if a pattern emerges.</p> 
+        
+        <p>The following graphic from 
+        <a href="https://www.nytimes.com/interactive/2017/01/18/upshot/some-colleges-have-more-students-from-the-top-1-percent-than-the-bottom-60.html">The New York Times</a>, for example, approximates parallel coordinates by tracking three variables: parent income rank, child income rank later in life, and the type of college attended. 
+        </p>
+              <img class="NYTImage" src="../img/CollegeIncomeRank.jpg">
+        <p>The parent income rank (along the x-axis) at each decile is independent of the other deciles.  By connecting the points which correspond to college selectivity categories, the reader gains an extra layer of analysis and can interpret the data more easily. It becomes clear that while most children grow into the income categories in which they were raised, children who go to selective schools largely end up earning similarly high incomes.</p>
+        
+        <p>
+        
+        </p>
+        
+        
+        
+
+        
+        <p>Several different programs can be used to build parallel coordinates visualizations, including ELKI, GGobi, Mondrai, ROOT, and Orange.</p>
+    <h7>Advantages</h7> 
+        <p>A number of patterns can be observed using parallel coordinates, as demonstrated in the following visualization. In the first section, for example, there is no observable relationship among the data. The second section features a negative relationship, as the lines cross at the midpoint. The third section features a positive, exponential relationship, and so on. When dealing with actual data, rearranging the x-axis points can bring different relationships such as the ones shown here into focus.</p>
+                <img class="ExImage" src="../img/Parallel_coordinates-sample.png">
+
+    <h7>Disadvantages</h7>
+        <ul>
+            <li>When too many data items are added, the lines can overlap and make it difficult to read anything</li>
+            <li>When arranged two-dimensionally, each axis is restricted to two immediate neighboring axes; this makes arranging the order of the axes especially important when trying to show relationships most clearly.</li>
+            <li>Can be most effective when interactive (emphasizing certain groupings/variables to observe patterns across the axes), which limits the most effective uses to digital environments.</li>
+        </ul>
+      
+    <h7>History</h7>
+      <p class="bioText">Examples of parallel coordinate visualizations appear as early as 1880 (<span class="italic">Chart for the U.S. Census, General Summary, Showing the Rank of the States, by Ratios</span>, attributed to Henry Gannett and Fletcher Hewes, shown below). Alfred Inselberg is also credited with inventing the form as early as 1959; at the very least, he helped develop and popularize parallel coordinate charts through textbooks (Parallel Coordinates: Visual Multidimensional Geometry and Its Applications in 2009), articles (The Plane with Parallel Coordinates, in The VIsual Computer, 1985), and work on topics like air traffic control and data mining. Parallel coordinates are related to time-series visualizations, which have an inherent order (that is, there is a logical and presumptive order to the data points when time runs along the x-axis. Reordering the axes in a time series is likelier to cause confusion than to offer a chance to observe meaningful patterns, as it does with parallel coordinates).</p>
+          <img class="StatesImage" src="../img/4521152.jpg">
+        <p>Sources:</p>
+    <h6>http://www.davidrumsey.com/luna/servlet/detail/RUMSEY~8~1~32803~1152181:General-summary,-showing-the-rank-o?sort=Pub_Date%2CPub_List_No_InitialSort&qvq=q:List_No%3D%274521.152%27%22%2B;sort:Pub_Date%2CPub_List_No_InitialSort;lc:RUMSEY~8~1&mi=0&trs=1</h6>
+    <h6>http://www.insticc.org/portal/NewsDetails/TabId/246/ArtMID/1130/ArticleID/323/Alfred-Inselberg.aspx</h6>
+    <h6>https://commons.wikimedia.org/w/index.php?curid=37631153</h6>
+    <h6>https://www.nytimes.com/interactive/2017/01/18/upshot/some-colleges-have-more-students-from-the-top-1-percent-than-the-bottom-60.html</h6>
+        
+        
+      <p class="bioText"><a href="../index.html">Back to the futu...I mean, homepage</a></p>
     </div>
   </body>
 </html>

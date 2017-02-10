@@ -1,0 +1,155 @@
+body{
+    font-family: 'Raleway', sans-serif;
+}
+
+div.title{
+    width: 100%;
+    height: 100%;
+}
+
+h1{
+	color: #000000;
+    font-weight: 700;
+    font-size: 3em;
+    max-width: 800px;
+    text-align: left;
+    margin: 25px, 25px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: auto;
+}
+
+h2{
+    font-size: 2em;
+    font-weight: 100;
+    font-style: italic;
+    max-width: 800px;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 10px;
+    color: lightgray;
+}
+
+h3{
+	font-size: 1.25em;
+    font-weight: 300;
+    max-width: 800px;
+    text-align: center;
+    margin-top: 5px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: auto;
+}
+
+h4{
+    font-size: 2em;
+    font-weight: 400;
+    text-align: left;
+}
+
+h5{
+	color: #000000;
+    font-weight: 700;
+    font-size: 2em;
+    text-align: left;
+    margin: 25px, 25px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: auto;
+}
+
+h6{
+    color: darkgray;
+    font-size: .75em;
+    font-weight: 100;
+    max-width: 800px;
+    margin-bottom: 1px;
+}
+
+h7{
+    font-size: 2em;
+    font-weight: 100;
+    max-width: 800px;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 10px;
+    color: green;
+    text-decoration: underline;
+}
+
+div.bio{
+    max-width: 800px;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+img.bioImage{
+    width: 40%;
+    margin: auto;
+    display: block;
+    image-orientation: left;
+}
+
+img.StatesImage{
+    width: 90%;
+    margin: auto;
+    display: block;
+}
+
+img.ExImage{
+    width: 70%;
+    margin: auto;
+    display: block;
+}
+
+img.NYTImage{
+    width: 90%;
+    margin: auto;
+    display: block;
+}
+
+p.bioText{
+    font-weight: 300;
+    font-size: 1.05em;
+    line-height: 130%;
+}
+
+p.bioText > a{
+    color: #000000;
+}
+
+p.bioText > a:hover{
+    background-color: #FFFF00; 
+}
+
+p.centerparagraph{
+    text-align: center;
+}
+
+.italic{
+    font-style:italic;
+}
+
+div.linkList{
+    max-width: 800px;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+li.assignmentLink{
+    font-weight: 300;
+    font-size: 1.05em;
+    line-height: 130%;
+}
+
+li.assignmentLink > a{
+    color: #000000;
+}
+
+li.assignmentLink > a:hover{
+    background-color: #FFFF00; 
+}
