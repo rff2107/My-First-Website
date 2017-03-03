@@ -1,9 +1,9 @@
-// ***** Global variables ***** //
 var refugeeTable;
 var topRefugeesTable = new p5.Table;
 var maxTotal = 0;
 var maxLabel = 0;
 var maxLength = 550;
+var topRefugeeCountries = new p5.Table;
 var headers = ['Country','Refugees','Asylum-seekers','Returned refugees','IDPs','Returned IDPs','Stateless','Others of concern','Total']
 
 // ***** Preload function ***** //
@@ -28,42 +28,45 @@ function setup(){
     createNewTable();
 }
 
-// ****** Create new table function ******** //
+//***** Create new table function *****//
 function createNewTable(){
     for (var i = 0; i < headers.length; i++) {
         topRefugeesTable.addColumn(headers[i]);
     }
-    for (var i = 0; i < refugeeTable.getRowCount(); i++) {
-        var totalRefugees = refugeeTable.getNum(i, 'Total');
-        if (totalRefugees >= 100000) {
-            var newRow = topRefugeesTable.addRow()
-            for (var j =0; j < headers.length; j++) {
-                newRow.setString(headers[j], refugeeTable.getString(i, headers[j]));
-            }
+    topRefugeeCountries.addColumn("Country");
+    topRefugeeCountries.addColumn("Total");
+    var minimumRefugees = 100000;
+    for (var i = 0; i < refugeeTable.getRowCount(); i++){
+        var thisTotal = refugeeTable.getNum(i, "Total");
+        if (thisTotal >= minimumRefugees){
+            var newRow = topRefugeeCountries.addRow();
+            newRow.setString("Country", refugeeTable.getString(i, "Country"));
+            newRow.setNum("Total", thisTotal);
         }
     }
-    print('New top refugee table created...');
+    print('Created new table of top refugee countries...');
 }
 
-function drawCountries(category){
+function draw(){
+    background(255);
     fill(0);
     noStroke();
     textAlign(LEFT, TOP);
-    for (var i = 0; i < topRefugeesTable.getRowCount(); i++) {
-        var total = topRefugeesTable.getNum(i, category);
+    for (var i = 0; i < topRefugeeCountries.getRowCount(); i++) {
+        var total = topRefugeeCountries.getNum(i, 'Total');
         var length = map(total, 0, maxTotal, 0, maxLength);
         rect(maxLabel * 5, 2 + 14*i, length, 12);
         text(nfc(total, 0), maxLabel * 5 + length + 5, 14*i);
     }
     textAlign(RIGHT, TOP);
-    for (var i = 0; i < topRefugeesTable.getRowCount(); i++) {
-        text(topRefugeesTable.getString(i, 'Country'), maxLabel * 5 - 5, 14*i);
+    for (var i = 0; i < topRefugeeCountries.getRowCount(); i++) {
+        text(topRefugeeCountries.getString(i, 'Country'), maxLabel * 5 - 5, 14*i);
     }
 }
 
 // ***** Draw function ***** //
-function draw(){
-    background(255);
-    // drawCountries(refugeeTable);
-    drawCountries("Asylum-seekers");
-}
+//function draw(){
+//    background(255);
+//    // drawCountries(refugeeTable);
+//    drawCountries(topRefugeesTable);
+//}
