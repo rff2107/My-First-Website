@@ -1,35 +1,29 @@
-// ***** Global variables ***** //
-var distances = [];
-var maxDistance;
-var spacer;
-
-// ***** Preload function ***** //
+var xpos = 0;
+var ypos = 0;
+var xstep = 40;
+var ystep = 40;
 
 
-// ***** Setup function ***** //
-function setup(){
-    createCanvas(800, 800);
-    maxDistance = dist(width/2, height/2, width, height);
-    for (var x = 0; x < width; x++){
-        distances[x] = [];        
-        for (var y = 0; y < height; y++){
-            var distance = dist(width/2, height/2, x, y);
-            distances[x][y] = distance/maxDistance * 255;
-        }
-    }
-    spacer = 20;
-    noLoop();
+function setup() {
+  createCanvas(800, 800);
 }
 
-// ***** Draw function ***** //
-function draw(){
-    background(0);
-    for (var x = 0; x < width; x += spacer){
-        for (var y = 0; y < height; y += spacer){
-            noStroke();
-            fill(x, x, x)
-            ellipse(x + spacer/2, y + spacer/2, 20, 20);
+function draw() {
+    background(255);
+    stroke(100);
+    strokeWeight(1);
+    
+    for (var j = 0; j < 20; j++) {
+        for (var i = 0; i < 20; i++) {
+            
+            var x1 = 20 + xpos + (xstep * i);
+            var y1 = 20 + ypos + (ystep * j);
+            var x2 = mouseX;
+            var y2 = mouseY;
+            var d = int(dist(x1, y1, x2, y2));
+            var diameter = map(d, 0, 800, 10, 35);
+            fill(map(d, 0, 800, 0, 255));
+            ellipse(x1, y1, diameter, diameter);
         }
     }
 }
-
