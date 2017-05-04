@@ -1,9 +1,9 @@
-var xstep = 50;
-var ystep = 50;
+var xstep = 20;
+var ystep = 20;
 //var fillstep = ?;
 
 function setup() {
-  createCanvas(500, 500);
+  createCanvas(800, 800);
     colorMode(HSB);
     background(0, 0, 100);
     noStroke();
