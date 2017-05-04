@@ -12,13 +12,13 @@ function setup() {
 }
 
 function draw() {
-    colorMode(HSB, 360, 100, 100);
-    for (var j = 0; j < 40; j++) {
-        for (var i = 0; i < 40; i++) {
-            var h = map(j, 0, 40, 0, 360);
-            var s = map(j, 0, 40, 0, 100);
-            var b = map(j, 0, 40, 0, 100);
-            fill(h, s, b);
+    colorMode(HSB, 100);
+    for (var i = 0; i < xstep; i++) {
+        for (var j = 0; j < ystep; j++) {
+            var hue = i*2;
+            var saturation = j*2;
+     
+            fill(hue, saturation, 100);
             rect(10 + xpos + (xstep * i), 10 + ypos + (ystep * j), 20, 20);
         }
     }
