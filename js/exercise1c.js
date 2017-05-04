@@ -1,11 +1,9 @@
-var xpos = 0;
-var ypos = 0;
-var xstep = 20;
-var ystep = 20;
+var xstep = 50;
+var ystep = 50;
 //var fillstep = ?;
 
 function setup() {
-  createCanvas(800, 800);
+  createCanvas(500, 500);
     colorMode(HSB);
     background(0, 0, 100);
     noStroke();
@@ -17,9 +15,11 @@ function draw() {
         for (var j = 0; j < ystep; j++) {
             var hue = i*2;
             var saturation = j*2;
+            var squareX = i*10;
+            var squareY = j*10;
      
             fill(hue, saturation, 100);
-            rect(10 + xpos + (xstep * i), 10 + ypos + (ystep * j), 20, 20);
+            rect(squareX, squareY, 10, 10);
         }
     }
 }
