@@ -1,25 +1,33 @@
-var xstep = 20;
-var ystep = 20;
-//var fillstep = ?;
+var dimensionX = 50
+var dimensionY = 50
 
-function setup() {
-  createCanvas(800, 800);
-    colorMode(HSB);
-    background(0, 0, 100);
-    noStroke();
+function setup () {
+    createCanvas(500,500);
+
 }
 
-function draw() {
-    colorMode(HSB, 100);
-    for (var i = 0; i < xstep; i++) {
-        for (var j = 0; j < ystep; j++) {
+function drawCubes () {
+
+    colorMode (HSB, 100);
+
+    for (var i = 0; i < dimensionX; i++) {
+        for (var j = 0; j < dimensionY; j++) {
+
+            noStroke ();
+
             var hue = i*2;
             var saturation = j*2;
-            var squareX = i*10;
-            var squareY = j*10;
-     
-            fill(hue, saturation, 100);
-            rect(squareX, squareY, 10, 10);
+
+            fill(hue, saturation,100);
+
+            var cubeX = i*10;
+            var cubeY = j*10;
+
+            rect(cubeX,cubeY,10,10);
         }
     }
+}
+
+function draw () {
+    drawCubes ();
 }
